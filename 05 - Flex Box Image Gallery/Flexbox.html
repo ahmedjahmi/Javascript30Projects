@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flex Panels 💪</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<body>
+  <style>
+    html {
+      box-sizing: border-box;
+      background: #ffc600;
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px;
+      font-weight: 200;
+    }
+    
+    body {
+      margin: 0;
+    }
+    
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    .panels {
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .panel {
+      background: #6B0F9C;
+      box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+      color: white;
+      text-align: center;
+      align-items: center;
+      /* Safari transitionend event.propertyName === flex */
+      /* Chrome + FF transitionend event.propertyName === flex-grow */
+      transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+      font-size: 10px;
+      background-size: cover;
+      background-position: center;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel1 { background-image:url(https://static1.squarespace.com/static/5bdf5211f2e6b117889fe4c6/5bdf53f6b8a0450a336c0ae9/5bea88c86d2a73f4c46b07ed/1542097128463/D712D318-3E28-4AAB-A20E-FBF07C81DD3F.JPG?format=2500w); }
+    .panel2 { background-image:url(https://static1.squarespace.com/static/5bdf5211f2e6b117889fe4c6/5bdf6778aa4a999c65a3525e/5bdf69630ebbe857b72c1433/1542081172837/A1058AB4-AE9E-47E5-A947-5223522AA8BB.jpg?format=2500w); }
+    .panel3 { background-image:url(https://static1.squarespace.com/static/5bdf5211f2e6b117889fe4c6/5bdf64e38985834c9326d93c/5bea56778a922d06f76ef465/1542084227586/A84E4019-7069-41AA-807B-BF61D982A020.jpg?format=2500w); }
+    .panel4 { background-image:url(https://static1.squarespace.com/static/5bdf5211f2e6b117889fe4c6/5bea5ee6032be41f48107ed1/5bea5f8e352f537a54c8ac95/1542086550471/B16F4C5D-5A8C-4D58-A322-537A941E2DFD.jpg?format=2500w); }
+    .panel5 { background-image:url(https://static1.squarespace.com/static/5bdf5211f2e6b117889fe4c6/5bea4868758d463b01feebfb/5bed0e3a21c67c5e47f5decc/1542262430476/A97EDE1C-0D0E-4211-9335-AB6465C2C2A7.JPG?format=2500w); }
+
+    /* Flex Children */
+    .panel > * {
+      margin: 0;
+      width: 100%;
+      transition: transform 0.5s;
+      flex: 1 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .panel > *:first-child {
+      transform: translateY(-100%);
+    }
+    .panel.open-active > *:first-child {
+      transform: translateY(0);
+    }
+    .panel > *:last-child {
+      transform: translateY(100%);
+    }
+    .panel.open-active > *:last-child {
+      transform: translateY(0);
+    }
+
+    .panel p {
+      text-transform: uppercase;
+      font-family: 'Raleway', sans-serif;
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+      font-size: 2em;
+    }
+    
+    .panel p:nth-child(2) {
+      font-size: 4em;
+    }
+
+    .panel.open {
+      flex: 5;
+      font-size: 20px;
+    }
+
+  </style>
+
+
+  <div class="panels">
+    <div class="panel panel1">
+      <p>Naj</p>
+      <p>Portrait</p>
+      <p>@najwitthecam</p>
+    </div>
+    <div class="panel panel2">
+      <p>Naj</p>
+      <p>Product</p>
+      <p>@najwitthecam</p>
+    </div>
+    <div class="panel panel3">
+      <p>Naj</p>
+      <p>Nature</p>
+      <p>@najwitthecam</p>
+    </div>
+    <div class="panel panel4">
+      <p>Naj</p>
+      <p>Night Life</p>
+      <p>@najwitthecam</p>
+    </div>
+    <div class="panel panel5">
+      <p>Naj</p>
+      <p>Art</p>
+      <p>@najwitthecam</p>
+    </div>
+  </div>
+
+  <script>
+    const panels = document.querySelectorAll('.panel');
+
+    function toggleOpen() {
+      this.classList.toggle('open');
+    }
+
+    function toggleActive(e) {
+      console.log(e.propertyName);
+      if(e.propertyName.includes('flex')) {
+        this.classList.toggle('open-active');
+      }
+    }
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+
+  </script>
+
+
+
+</body>
+</html>
