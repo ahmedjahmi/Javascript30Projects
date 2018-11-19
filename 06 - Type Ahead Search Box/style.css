@@ -1,7 +1,7 @@
     html {
       box-sizing: border-box;
-      background: #ffc600;
-      font-family: 'helvetica neue';
+      background: #bb0000;
+      font-family: monospace;
       font-size: 20px;
       font-weight: 200;
     }
@@ -33,6 +33,7 @@
       border-radius: 5px;
       font-size: 40px;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+      font-family: monospace;
     }
 
     .suggestions {
@@ -70,5 +71,5 @@
     }
 
     .hl {
-      background: #ffc600;
+      background: #0070BA;
     }
