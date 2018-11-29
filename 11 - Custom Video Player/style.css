@@ -10,9 +10,9 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  background: #3b4665;
+  background: #1588fb;
   min-height: 100vh;
-  background: linear-gradient(135deg, #3b4665 0%,#3b4665 48%,#3b4665 100%);
+  background: linear-gradient(135deg, #1588fb 0%,#1588fb 48%,#1588fb 100%);
   background-size: cover;
   align-items: center;
   justify-content: center;
@@ -46,7 +46,7 @@ body {
   background: none;
   border: 0;
   line-height: 1;
-  color: white;
+  color: rgba(255,255,255,0.7);
   text-align: center;
   outline: 0;
   padding: 0;
@@ -71,7 +71,7 @@ body {
   transform: translateY(100%) translateY(-5px);
   transition: all .3s;
   flex-wrap: wrap;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0.3);
 }
 
 .player:hover .player__controls {
@@ -99,7 +99,7 @@ body {
 
 .progress__filled {
   width: 50%;
-  background: rgba(59, 70, 101, 0.7);
+  background: rgba(255,255,255, 0.3);
   flex: 0;
   flex-basis: 50%;
 }
@@ -122,7 +122,7 @@ input[type=range]::-webkit-slider-runnable-track {
   height: 8.4px;
   cursor: pointer;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
-  background: rgba(59, 70, 101, 0.8);
+  background: rgba(255,255,255, 0.3);
   border-radius: 1.3px;
   border: 0.2px solid rgba(1, 1, 1, 0);
 }
@@ -131,7 +131,7 @@ input[type=range]::-webkit-slider-thumb {
   height: 15px;
   width: 15px;
   border-radius: 50px;
-  background: rgba(59, 70, 101, 1);
+  background: rgba(255,255,255, 0.3);
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -3.5px;
@@ -147,7 +147,7 @@ input[type=range]::-moz-range-track {
   height: 8.4px;
   cursor: pointer;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
-  background: #ffffff;
+  background: rgba(255,255,255, 0.3);
   border-radius: 1.3px;
   border: 0.2px solid rgba(1, 1, 1, 0);
 }
@@ -157,6 +157,6 @@ input[type=range]::-moz-range-thumb {
   height: 15px;
   width: 15px;
   border-radius: 50px;
-  background: #ffc600;
+  background: rgba(255,255,255, 0.3);
   cursor: pointer;
 }
