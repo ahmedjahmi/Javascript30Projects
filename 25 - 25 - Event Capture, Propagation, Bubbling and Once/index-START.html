@@ -40,8 +40,27 @@
   }
 </style>
 
-<button></button>
+<button class="button"></button>
 <script>
+  const divs = document.querySelectorAll('div');
+  const button = document.querySelector('button');
+
+  function logText(e) {
+    console.log(this.classList.value);
+    // e.stopPropagation(); // stops from bubbling up the nested elements
+
+  }
+
+  divs.forEach(div => div.addEventListener('click', logText, {
+    capture: false, // false by default. if true it runs the function
+    // on the way down the nested elements to the one you click.
+    // if true and e.stopPropagation is in function, function will
+    // run on top parent element on the way down & stop there.
+    once: true // allows you to click once, function will run 
+    // and bubble up but not again on click until refresh
+  }));
+
+  button.addEventListener('click', logText, {once: true});
 
 </script>
 </body>
